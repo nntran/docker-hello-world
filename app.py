@@ -9,7 +9,7 @@ app = Flask(__name__)
 def hello():
     message = "Hello World!"
     hostname = socket.gethostname()
-    #app.logger.info('Container ID: %s', hostname)
+    app.logger.info('Container ID: %s', hostname)
     return render_template('index.html', message=message, hostname=hostname)
 
 # run the application
