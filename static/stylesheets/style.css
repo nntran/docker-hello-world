@@ -49,8 +49,12 @@ html,body{
   text-align: center;
 }
 
-#content-container-center h3{
+#content-container-center h1{
   color: #254356;
+}
+
+#content-container-center h5{
+  color: #222022;
 }
 
 #background-stats{
