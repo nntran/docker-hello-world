@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  env-viz:
+  hello-world:
     image: ntdtfr/hello-world
     build: .
     ports:
