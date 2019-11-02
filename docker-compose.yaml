@@ -1,7 +1,13 @@
 version: "3.7"
 services:
   hello-world:
-    image: ntdtfr/hello-world
-    build: .
+    image: ${DOCKER_ID:-ntdtfr}/hello-world:${IMAGE_VERION:-latest}
+    build:
+      context: .
     ports:
       - 5000:5000
+    networks:
+      - private
+networks:
+  private:
+    driver: overlay

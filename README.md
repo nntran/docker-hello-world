@@ -15,10 +15,16 @@ docker build --rm --tag hello-world .
 
 ### Run
 
-```sh
+* With `docker run` command
+
+```
 docker run --rm -p 5000:5000 hello-world
 ```
 
+* With `docker-compose` command
+
+```
+docker-compose up --build
+```
+
 It serve at http://localhost:5000
-
-

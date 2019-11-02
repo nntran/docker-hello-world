@@ -4,18 +4,18 @@ services:
     image: ntdtfr/hello-world
     labels:
       - fr.ntdt.environment=${ENVIRONMENT:-DEV}
-      - fr.ntdt.service.description="A simple service for test"
+      - fr.ntdt.service.description="A simple service for training"
     networks:
-      - traefik-net
+      - public
     deploy:
       mode: replicated
       replicas: 2
       labels:
-        # - traefik.enable=true
+        - traefik.enable=true
+        - traefik.docker.network=public
 
         # traefik v1.7
         # https://docs.traefik.io/v1.7/configuration/backends/docker/
-        # - traefik.docker.network=traefik-net
         # #- traefik.entryPoint=http,https
         # - traefik.port=5000
         # - traefik.backend=hello-world
@@ -44,5 +44,6 @@ services:
           cpus: "0.1"
           memory: 200M
 networks:
-  traefik-net:
+  public:
+    name: traefik-net
     external: true
